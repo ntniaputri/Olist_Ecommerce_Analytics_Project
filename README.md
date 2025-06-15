@@ -19,7 +19,7 @@ The dataset contains detailed records of orders, products, customers, reviews, a
 ## 🔍 Data Structure & Initial Checks 📋
 
 The Olist e-commerce dataset is structured into multiple relational tables capturing different aspects of the business process including orders, order items, customers, reviews, and geolocations. For the purpose of this analysis, key tables were joined and aggregated into a single, analysis-ready table to simplify tracking sales trends and customer behavior.
-
+![image](https://github.com/user-attachments/assets/8aa2551b-d973-4daf-9602-1881825ae8e4)
 Key fields used in this dataset include:
 
 * `order_id`: Unique ID for each order, used to link across tables.
