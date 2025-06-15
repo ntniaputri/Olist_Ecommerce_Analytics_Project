@@ -47,7 +47,7 @@ Before beginning the analysis, initial data checks showed ~100,000 records. Afte
 ---
 
 ## 📈 Sales Trends 📈
-
+![image](https://github.com/user-attachments/assets/383c3187-4e16-44c7-963d-b0c0473f2323)
 * **Average Order Value (AOV):** AOV peaked at $143.13 in January 2017, subsequently declining to $119.10 by July 2017 and ending the period at $127.27 in August 2018. The W-shaped trend observed throughout 2017 included November (Black Friday), where an AOV of $128.96, amidst record-high transaction volume and total sales, strongly suggests a surge driven by promotional pricing. In 2018, AOV showed a peak of $138.68 in May before a gradual decline.
 * **Transaction Volume:** Transaction volume reached its highest point with 7,319 orders in November 2017. After maintaining robust figures, it saw a decline to 6,162 orders by July 2018. The period began with a consistent growth throughout 2017 from an initial 747 orders in January, demonstrating sustained order activity into early 2018.
 * **Total Sales Value:** Total sales value reached a peak of $943,878.71 in November 2017 and a 2018 peak of $986,181.57 in May. By August 2018, it tapered to $850,774.15. Overall, sales climbed significantly from $106,921.27 in January 2017, showing strong foundational growth before a moderate decline towards the end of the analyzed period.
@@ -55,13 +55,11 @@ Before beginning the analysis, initial data checks showed ~100,000 records. Afte
     * Monthly Peaks: November 2017 ($943,878.71) and May 2018 ($986,181.57).
     * Weekly Spike: A sharp increase to $343,714.09 during the week of October 29, 2017.
     * Daily Trends: Tuesdays consistently generated the highest daily sales $2,438,741.67), while Sundays recorded the lowest ($1,168,868.78).
-  
-![image](https://github.com/user-attachments/assets/38c79258-2d66-486b-b139-eec2cb6ac9ba)
 
 ---
 
 ## 📦 Product Insights 📦
-
+![image](https://github.com/user-attachments/assets/0f1cd55e-26b7-492f-b1fe-9ce52d39dfa1)
 * **Hobbies, Arts & Party Supplies:** Led with $2.25M (17.45%), peaking at $188.4K (Nov 2017), due to diverse offerings.
 * **Home & Living Goods:** Second highest in sales at $2.20M (17.09%). This category peaked at $187.5K in May 2018, largely driven by its bed, bath, and table products and typical seasonal demand.
 * **Electronics & Gadgets:** Generated $1.81M (14.02%), peaking at $149.5K (Feb 2018), possibly tied to tech cycles.
@@ -73,7 +71,8 @@ Before beginning the analysis, initial data checks showed ~100,000 records. Afte
 ---
 
 ## 🤝 Customer Behavior 🧑‍🤝‍🧑
-
+![image](https://github.com/user-attachments/assets/fd519516-34c9-4e30-9146-2f7b138f71d0)
+![image](https://github.com/user-attachments/assets/16bf883b-03d1-47ad-8c1c-7510d91f06d6)
 * **New Customer Dominance:** New customers overwhelmingly dominate the monthly active base (e.g., Aug 2018: 6,481 new vs. 204 repeat).
 * **Repeat Customer Value:** Despite low volume, repeat customers generate 2.13% of total revenue ($275K), indicating a higher average spend.
 * **Low Repeat Activity & Poor Retention:** Repeat customers constitute a minimal portion of the monthly active base (1-3%). This is reflected in cohort analysis, which shows poor long-term retention, with most cohorts dropping to 0.3-0.4% by Month 4.
