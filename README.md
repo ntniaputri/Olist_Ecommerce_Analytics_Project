@@ -11,8 +11,8 @@ The dataset contains detailed records of orders, products, customers, reviews, a
 * **Product Performance**: Assess contributions of top categories and products, detect underperformers, and identify unique or seasonal trends.
 * **Customer Behavior & Retention**: Analyzes customer purchasing patterns by segmenting new vs. repeat buyers, identifying order frequency, and comparing spending levels. Assess satisfaction through review scores and explore retention trends using cohort analysis to uncover loyalty patterns, repeat purchase rates, and the long-term value of returning customers.
 
-Data was initially inspected and prepared using Microsoft Excel.
-Interactive dashboards and analyses are available in Tableau: 🔗 https://public.tableau.com/views/OlistE-commerceDashboardFinal/CustomerDashboard2?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+* **Data was initially inspected and prepared using Microsoft Excel.
+* **Interactive dashboards and analyses are available in Tableau: 🔗 https://public.tableau.com/views/OlistE-commerceDashboardFinal/CustomerDashboard2?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 ---
 
