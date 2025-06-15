@@ -1,0 +1,183 @@
+SELECT order_id, product_id, SUM(price), SUM(freight_value)
+FROM order_items 
+GROUP BY order_id, product_id;
+
+SELECT soi.order_id, soi.product_id, soi.total_order_item_value, soi.total_freight_value, pro.product_category, pcnt.product_category_name_english
+FROM sum_order_items AS soi
+JOIN products AS pro ON soi.product_id = pro.product_id
+JOIN product_category_name_translation AS pcnt ON pro.product_category = pcnt.product_category_name;
+
+CREATE TABLE data_final AS
+SELECT
+    oip.order_id,
+    oip.product_id,
+    oip.total_order_item_value,
+    oip.total_freight_value,
+    oip.product_category,
+    oip.product_category_name_english,
+    o.customer_id,
+    o.order_status,
+    o.order_approved_at,
+    rs.review_id,
+    rs.review_score,
+    c.customer_city,
+    c.customer_state,
+    c.customer_unique_id,
+    o.order_delivered_customer_date,
+    o.order_delivered_carrier_date,
+    COUNT(*) AS duplicate_count
+FROM order_items_and_products AS oip
+JOIN orders AS o ON oip.order_id = o.order_id
+JOIN customers AS c ON o.customer_id = c.customer_id
+JOIN review_score AS rs ON o.order_id = rs.order_id
+GROUP BY
+    oip.order_id,
+    oip.product_id,
+    oip.total_order_item_value,
+    oip.total_freight_value,
+    oip.product_category,
+    oip.product_category_name_english,
+    o.customer_id,
+    o.order_status,
+    o.order_approved_at,
+    rs.review_id,
+    rs.review_score,
+    c.customer_city,
+    c.customer_state,
+    c.customer_unique_id,
+    o.order_delivered_customer_date,
+    o.order_delivered_carrier_date;
+
+CREATE TABLE payments (
+order_id VARCHAR(50),
+payment_sequential INT,
+payment_type VARCHAR(50),
+payment_installments INT,
+payment_value DECIMAL(10, 2)
+);
+
+LOAD DATA INFILE 'D:\payments.csv'
+INTO TABLE payments
+FIELDS TERMINATED BY ','
+IGNORE 1 ROWS;
+
+CREATE TABLE orders (
+order_id VARCHAR(255),
+customer_id VARCHAR(100),
+order_status VARCHAR(100),
+order_purchase_timestamp DATE,
+order_approved_at DATE,
+order_delivered_carrier_date DATE,
+order_delivered_customer_date DATE,
+order_estimated_delivery_date DATE
+);
+
+LOAD DATA INFILE 'D:\orders.csv'
+INTO TABLE orders
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS 
+(order_id, customer_id, order_status, @order_purchase_timestamp, 
+ @order_approved_at, @order_delivered_carrier_date, 
+ @order_delivered_customer_date, @order_estimated_delivery_date)
+SET order_purchase_timestamp = IF(@order_purchase_timestamp = '', NULL, @order_purchase_timestamp),
+    order_approved_at = IF(@order_approved_at = '', NULL, @order_approved_at),
+    order_delivered_carrier_date = IF(@order_delivered_carrier_date = '', NULL, @order_delivered_carrier_date),
+    order_delivered_customer_date = IF(@order_delivered_customer_date = '', NULL, @order_delivered_customer_date),
+    order_estimated_delivery_date = IF(@order_estimated_delivery_date = '', NULL, @order_estimated_delivery_date);
+    
+CREATE TABLE products (
+product_id VARCHAR(50),
+product_category VARCHAR(50),
+product_name_length VARCHAR(50),
+product_description_length VARCHAR(50),
+product_photos_qty VARCHAR(50),
+product_weight_g VARCHAR(50),
+product_length_cm VARCHAR(50),
+product_height_cm VARCHAR(50),
+product_width_cm VARCHAR(50));
+
+LOAD DATA INFILE 'D:\products.csv'
+INTO TABLE products
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(
+    @product_id, @product_category, @product_name_length, @product_description_length, 
+    @product_photos_qty, @product_weight_g, @product_length_cm, @product_height_cm, @product_width_cm
+)
+SET 
+    product_id = IF(@product_id = '', NULL, @product_id),
+    product_category = IF(@product_category = '', NULL, @product_category),
+    product_name_length = IF(@product_name_length = '', NULL, @product_name_length),
+    product_description_length = IF(@product_description_length = '', NULL, @product_description_length),
+    product_photos_qty = IF(@product_photos_qty = '', NULL, @product_photos_qty),
+    product_weight_g = IF(@product_weight_g = '', NULL, @product_weight_g),
+    product_length_cm = IF(@product_length_cm = '', NULL, @product_length_cm),
+    product_height_cm = IF(@product_height_cm = '', NULL, @product_height_cm),
+    product_width_cm = IF(@product_width_cm = '', NULL, @product_width_cm)
+;
+
+CREATE TABLE order_items (
+order_id VARCHAR(50),
+order_item_id VARCHAR(50),
+product_id VARCHAR(50),
+seller_id VARCHAR(50),
+shipping_limit_date DATE,
+price DECIMAL(10, 2),
+freight_value DECIMAL(10, 2));
+
+LOAD DATA INFILE 'D:\order_items.csv'
+INTO TABLE order_items
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+CREATE TABLE sum_order_items (
+order_id VARCHAR(50),
+product_id VARCHAR(50),
+qty INT,
+total_order_item_value DECIMAL(10,2),
+total_freight_value DECIMAL(10,2)
+);
+
+LOAD DATA INFILE 'D:\sum order_items (e-commerce).csv'
+INTO TABLE sum_order_items
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+CREATE TABLE product_category_name_translation (
+product_category_name VARCHAR(50),
+product_category_name_english VARCHAR(50));
+
+LOAD DATA INFILE 'D:\product_category_name_translation.csv'
+INTO TABLE product_category_name_translation
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+CREATE TABLE review_score (
+review_id VARCHAR(50),
+order_id VARCHAR(50),
+review_score INT
+);
+
+LOAD DATA INFILE 'D:/review clean-review score only (e-commerce).csv'
+INTO TABLE review_score
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+CREATE TABLE customers (
+customer_id VARCHAR(50),
+customer_unique_id VARCHAR(50),
+customer_zip_code_prefix VARCHAR(50),
+customer_city VARCHAR(50),
+customer_state VARCHAR(50)
+);
+
+LOAD DATA INFILE 'D:\customers.csv'
+INTO TABLE customers
+FIELDS TERMINATED BY ','
+IGNORE 1 ROWS;
