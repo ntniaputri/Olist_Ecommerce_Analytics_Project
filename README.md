@@ -11,8 +11,8 @@ The dataset contains detailed records of orders, products, customers, reviews, a
 * **Product Performance**: Assess contributions of top categories and products, detect underperformers, and identify unique or seasonal trends.
 * **Customer Behavior & Retention**: Analyzes customer purchasing patterns by segmenting new vs. repeat buyers, identifying order frequency, and comparing spending levels. Assess satisfaction through review scores and explore retention trends using cohort analysis to uncover loyalty patterns, repeat purchase rates, and the long-term value of returning customers.
 
-* **Data was initially inspected and prepared using Microsoft Excel.
-* **Interactive dashboards and analyses are available in Tableau: 🔗 https://public.tableau.com/views/OlistE-commerceDashboardFinal/CustomerDashboard2?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+* Data was initially inspected and prepared using Microsoft Excel.
+* Interactive dashboards and analyses are available in Tableau: 🔗 https://public.tableau.com/views/OlistE-commerceDashboardFinal/CustomerDashboard2?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 ---
 
@@ -48,7 +48,7 @@ Before beginning the analysis, initial data checks showed ~100,000 records. Afte
 
 ## 📈 Sales Trends 📈
 ![image](https://github.com/user-attachments/assets/383c3187-4e16-44c7-963d-b0c0473f2323)
-* **Average Order Value (AOV):** AOV peaked at $143.13 in January 2017, subsequently declining to $119.10 by July 2017 and ending the period at $127.27 in August 2018. The W-shaped trend observed throughout 2017 included November (Black Friday), where an AOV of $128.96, amidst record-high transaction volume and total sales, strongly suggests a surge driven by promotional pricing. In 2018, AOV showed a peak of $138.68 in May before a gradual decline.
+* **Average Transaction Value (ATV):** ATV peaked at $143.13 in January 2017, subsequently declining to $119.10 by July 2017 and ending the period at $127.27 in August 2018. The W-shaped trend observed throughout 2017 included November (Black Friday), where an ATV of $128.96, amidst record-high transaction volume and total sales, strongly suggests a surge driven by promotional pricing. In 2018, ATV showed a peak of $138.68 in May before a gradual decline.
 * **Transaction Volume:** Transaction volume reached its highest point with 7,319 orders in November 2017. After maintaining robust figures, it saw a decline to 6,162 orders by July 2018. The period began with a consistent growth throughout 2017 from an initial 747 orders in January, demonstrating sustained order activity into early 2018.
 * **Total Sales Value:** Total sales value reached a peak of $943,878.71 in November 2017 and a 2018 peak of $986,181.57 in May. By August 2018, it tapered to $850,774.15. Overall, sales climbed significantly from $106,921.27 in January 2017, showing strong foundational growth before a moderate decline towards the end of the analyzed period.
 * **Sales Performance by Time Granularity:**
