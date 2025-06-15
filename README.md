@@ -55,6 +55,8 @@ Before beginning the analysis, initial data checks showed ~100,000 records. Afte
     * Monthly Peaks: November 2017 ($943,878.71) and May 2018 ($986,181.57).
     * Weekly Spike: A sharp increase to $343,714.09 during the week of October 29, 2017.
     * Daily Trends: Tuesdays consistently generated the highest daily sales $2,438,741.67), while Sundays recorded the lowest ($1,168,868.78).
+  
+![image](https://github.com/user-attachments/assets/38c79258-2d66-486b-b139-eec2cb6ac9ba)
 
 ---
 
