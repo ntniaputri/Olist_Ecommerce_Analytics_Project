@@ -33,7 +33,7 @@ Key fields used in this dataset include:
 * `customer_city` and `customer_state`: Geographic attributes for customer segmentation.
 * `review_id` and `review_score`: Link each order to its customer review and satisfaction level.
 
-Before beginning the analysis, initial data checks showed ~100,000 records. After cleaning, filtering for January 2017 to August 2018, and combining key tables, the final dataset contained ~99,000 records. Review data was cleaned in Excel, and SQL was used to aggregate order, product, customer, and review data into a single table. A product_category_general field was added to group detailed categories into broader ones for easier analysis. All visualizations were done in Tableau. SQL queries used can be found here.
+Before beginning the analysis, initial data checks showed ~100,000 records. After cleaning, filtering for January 2017 to August 2018, and combining key tables, the final dataset contained ~99,000 records. Review data was cleaned in Excel, and SQL was used to aggregate order, product, customer, and review data into a single table. A product_category_general field was added to group detailed categories into broader ones for easier analysis. All visualizations were done in Tableau. SQL queries used can be found here: https://github.com/ntniaputri/Olist_Ecommerce_Analytics_Project/blob/main/SQL_queries
 
 ---
 
