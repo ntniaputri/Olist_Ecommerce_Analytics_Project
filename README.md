@@ -2,7 +2,7 @@
 
 ---
 
-## ✨ Project Overview ✨
+## Project Overview
 
 This project analyzes Olist Store’s sales and customer data from **January 2017 to August 2018**, aiming to uncover performance trends and buyer behavior that can inform business growth strategies.
 
@@ -16,7 +16,7 @@ The dataset contains detailed records of orders, products, customers, reviews, a
 
 ---
 
-## 🔍 Data Structure & Initial Checks 📋
+## Data Structure & Initial Checks 
 
 The Olist e-commerce dataset is structured into multiple relational tables capturing different aspects of the business process including orders, order items, customers, reviews, and geolocations. For the purpose of this analysis, key tables were joined and aggregated into a single, analysis-ready table to simplify tracking sales trends and customer behavior.
 ![image](https://github.com/user-attachments/assets/8aa2551b-d973-4daf-9602-1881825ae8e4)
@@ -37,7 +37,7 @@ Before beginning the analysis, initial data checks showed ~100,000 records. Afte
 
 ---
 
-## 🌟 Executive Summary 🌟
+## Executive Summary
 
 * Olist's sales are heavily driven by seasonal promotions, generating high transaction volumes despite fluctuating Average Order Value.
 * Product performance relies significantly on event-driven demand, with top categories leading but many items showing only temporary spikes.
@@ -46,7 +46,7 @@ Before beginning the analysis, initial data checks showed ~100,000 records. Afte
 
 ---
 
-## 📈 Sales Trends 📈
+## Sales Trends
 ![image](https://github.com/user-attachments/assets/383c3187-4e16-44c7-963d-b0c0473f2323)
 * **Average Transaction Value (ATV):** ATV peaked at $143.13 in January 2017, subsequently declining to $119.10 by July 2017 and ending the period at $127.27 in August 2018. The W-shaped trend observed throughout 2017 included November (Black Friday), where an ATV of $128.96, amidst record-high transaction volume and total sales, strongly suggests a surge driven by promotional pricing. In 2018, ATV showed a peak of $138.68 in May before a gradual decline.
 * **Transaction Volume:** Transaction volume reached its highest point with 7,319 orders in November 2017. After maintaining robust figures, it saw a decline to 6,162 orders by July 2018. The period began with a consistent growth throughout 2017 from an initial 747 orders in January, demonstrating sustained order activity into early 2018.
@@ -58,7 +58,7 @@ Before beginning the analysis, initial data checks showed ~100,000 records. Afte
 
 ---
 
-## 📦 Product Insights 📦
+## Product Insights
 ![image](https://github.com/user-attachments/assets/0f1cd55e-26b7-492f-b1fe-9ce52d39dfa1)
 * **Hobbies, Arts & Party Supplies:** Led with $2.25M (17.45%), peaking at $188.4K (Nov 2017), due to diverse offerings.
 * **Home & Living Goods:** Second highest in sales at $2.20M (17.09%). This category peaked at $187.5K in May 2018, largely driven by its bed, bath, and table products and typical seasonal demand.
@@ -70,7 +70,7 @@ Before beginning the analysis, initial data checks showed ~100,000 records. Afte
 
 ---
 
-## 🤝 Customer Behavior 🧑‍🤝‍🧑
+## Customer Behavior
 ![image](https://github.com/user-attachments/assets/fd519516-34c9-4e30-9146-2f7b138f71d0)
 ![image](https://github.com/user-attachments/assets/16bf883b-03d1-47ad-8c1c-7510d91f06d6)
 * **New Customer Dominance:** New customers overwhelmingly dominate the monthly active base (e.g., Aug 2018: 6,481 new vs. 204 repeat).
@@ -82,7 +82,7 @@ Before beginning the analysis, initial data checks showed ~100,000 records. Afte
 
 ---
 
-## 💡 Recommendations 💡
+## Recommendations
 
 * Maximize key sales periods (Nov, May) and Tuesday daily peaks, optimizing AOV during promotions.
 * Prioritize top product categories (Hobbies & Arts, Home & Living) and leading items like health and beauty, re-evaluate underperformers to shift from event-driven sales.
